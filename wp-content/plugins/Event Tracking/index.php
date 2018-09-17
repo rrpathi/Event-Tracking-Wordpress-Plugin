@@ -1,12 +1,11 @@
 <?php
 /*
 Plugin Name: Event Tracking
-Plugin URI: https://github.com/rrpathi
+Plugin URI: https://github.com/rrpathi/Event-Tracking-Wordpress-Plugin
 Description: The complete list of the WordPress Post log And Comments log events the  Tracking plugin.
 Version: 1.0
 Author: Ragupathi
 Author URI: https://github.com/rrpathi
-Text Domain: health-check
 License:     GPLv2 
 Domain Path: /languages
 */
@@ -27,6 +26,7 @@ if(!defined("PLUGIN_URL")){
 	    add_submenu_page("log-list", "Comment Log", "Comments  ", "manage_options", "comment-list", "commentlog");
   }
 // Connecting css file And js file
+  	add_action('init','plugin_assets');
 	function plugin_assets(){
 		wp_enqueue_style( "bootstrap",PLUGIN_URL."/assets/css/bootstrap.min.css");
 		wp_enqueue_script("bootstrap",PLUGIN_URL."/assets/js/bootstrap.min.js");
